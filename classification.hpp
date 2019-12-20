@@ -1,0 +1,6 @@
+
+
+class Classification(){
+	public:
+		Classification();
+}
