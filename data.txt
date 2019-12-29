@@ -1,0 +1,7 @@
+# veriler, sırası ile; yaş, boy, kilo, cinsiyet
+20 178 68 E
+21 167 55 K
+19 172 61 K
+26 175 69 E
+23 165 52 K
+19 176 64 E

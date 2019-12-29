@@ -1,6 +1,11 @@
+#ifndef CLASSIFICATION_HPP
+#define CLASSIFICATION_HPP
 
+#include<iostream>
+#include<string>
+#include<fstream>
+#include<vector>
 
-class Classification(){
-	public:
-		Classification();
-}
+using namespace std;
+
+#endif
