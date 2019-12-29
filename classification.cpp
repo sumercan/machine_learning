@@ -97,6 +97,28 @@ int main(){
 			cout<<*i<<" ";
 		cout<<endl;
 
+	//Erkeklerin ve kadınların yaş ortalaması:
+	float erkekYas=0;
+	float kadinYas=0;
+	int ks=0;//kadın sayısı
+	int es=0;//erkek sayısı
+	for(auto i=0; i<cinsiyet.size(); i++){
+		if(cinsiyet.at(i) == "E"){
+			erkekYas += yas.at(i);
+			es++;
+		}
+		else{
+			kadinYas += yas.at(i);
+			ks++;
+		}
+	}
+	cout<<"Kadınların Yaş Toplamı:"<<kadinYas<<endl; 
+	cout<<"Erkeklerin Yaş Toplamı:"<<erkekYas<<endl;
+	erkekYas = erkekYas/es;
+	kadinYas = kadinYas/ks;
+	cout<<"Kadınların Yaş Ortalaması:"<<kadinYas<<endl; 
+	cout<<"Erkeklerin Yaş Ortalaması:"<<erkekYas<<endl;
+
 	float number = 10.0;
 	string str ="23.5";
 	number += strtof((str).c_str(),0);//string to float
