@@ -31,7 +31,7 @@ int main(){
 						if(st != EOL){
 							yorum += st;
 						}
-						else{ 
+						else{
 							yorum += st;
 							readText.get(st);
 							break;
@@ -75,7 +75,7 @@ int main(){
 		readText.close();
 
 		cout<<"Yorum      : "<<yorum<<endl;
-		
+
 		//Yaşları yazdır:
 		cout<<"Yaşlar     : ";
 		for(auto i=yas.begin(); i!=yas.end(); ++i)
@@ -99,25 +99,46 @@ int main(){
 
 	//Erkeklerin ve kadınların yaş ortalaması:
 	float erkekYas=0;
+	float erkekBoy=0;
+	float erkekKil=0;
 	float kadinYas=0;
+	float kadinBoy=0;
+	float kadinKil=0;
 	int ks=0;//kadın sayısı
 	int es=0;//erkek sayısı
 	for(auto i=0; i<cinsiyet.size(); i++){
 		if(cinsiyet.at(i) == "E"){
 			erkekYas += yas.at(i);
+			erkekBoy += boy.at(i);
+			erkekKil += kilo.at(i);
 			es++;
 		}
 		else{
 			kadinYas += yas.at(i);
+			kadinBoy += boy.at(i);
+			kadinKil += kilo.at(i);
 			ks++;
 		}
 	}
-	cout<<"Kadınların Yaş Toplamı:"<<kadinYas<<endl; 
-	cout<<"Erkeklerin Yaş Toplamı:"<<erkekYas<<endl;
+
 	erkekYas = erkekYas/es;
+	erkekBoy = erkekBoy/es;
+	erkekKil = erkekKil/es;
 	kadinYas = kadinYas/ks;
-	cout<<"Kadınların Yaş Ortalaması:"<<kadinYas<<endl; 
+	kadinBoy = kadinBoy/ks;
+	kadinKil = kadinKil/ks;
+	cout<<"Kadınların Yaş Ortalaması:"<<kadinYas<<endl;
 	cout<<"Erkeklerin Yaş Ortalaması:"<<erkekYas<<endl;
+	cout<<"Kadınların Boy Ortalaması:"<<kadinBoy<<endl;
+	cout<<"Erkeklerin Boy Ortalaması:"<<erkekBoy<<endl;
+	cout<<"Kadınların Kilo Ortalaması:"<<kadinKil<<endl;
+	cout<<"Erkeklerin Kilo Ortalaması:"<<erkekKil<<endl;
+
+	ofstream outputFile("output.txt");
+	outputFile<<"kyo: "<<kadinYas<<" "<<"eyo: "<<erkekYas
+	<<" "<<"kbo: "<<kadinBoy<<" "<<"ebo: "<<erkekBoy<<" "
+	<<"kko: "<<kadinKil<<" "<<"eko: "<<erkekKil;
+	outputFile.close();
 
 	float number = 10.0;
 	string str ="23.5";
